@@ -1,2 +1,3 @@
 # dsaprograms
-i upload DSA programs here
+I upload  my codes here .
+These codes are made simple by me in a short and sweet manner.
