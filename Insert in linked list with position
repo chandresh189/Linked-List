@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *next;
+}*head;
+
+int main()
+{	struct node *p,*temp;
+	int n;
+	head=(struct node *)malloc(sizeof(struct node));
+	temp=head;	
+	printf("enter no.of elements\n");
+	scanf("%d",&n);
+	printf("enter 1 data\n");
+	scanf("%d",&head->data);
+	for(int i=2;i<=n;i++)
+	{  
+		p=(struct node *)malloc(sizeof(struct node));
+		printf("enter %d data",i);
+		scanf("%d",&p->data);
+		temp->next=p;
+		temp=temp->next;
+		temp->next=NULL;
+	}
+	for(int i=0;i<=n;i++)
+	{
+		struct node *temp;
+	if(i==0)	temp= head;
+		if(temp!=NULL)
+		{
+			printf("%d  ",temp->data);
+			temp=temp->next;
+		}
+	}
+	int pos,c;
+	printf("\nNew node, enter the position");
+	scanf("%d",&pos);
+	printf("enter a no.");
+	scanf("%d",&c);
+	p=(struct node *)malloc(sizeof(struct node));
+	temp=head;
+	while(pos-2!=0)
+	{
+		temp=temp->next;
+		pos--;
+	}
+	p->data=c;
+	p->next=temp->next;
+	temp->next=p;
+	for(int i=0;i<=n+1;i++)
+	{
+		struct node *temp;
+	if(i==0)	temp= head;
+		if(temp!=NULL)
+		{
+			printf("%d  ",temp->data);
+			temp=temp->next;
+		}
+	}
+	return 0;
+}
